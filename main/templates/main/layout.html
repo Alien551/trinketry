@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}TRINKETRY</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static 'main/img/favicon.png' %}">
+</head>
+<body>
+    <header> 
+        <a href="{% url 'home' %}">
+            <div class="title">
+            <div class="image">
+            <img src="{% static 'main/img/alpaca.svg' %}" alt="TRINKETRY">
+            </div>
+            <div class="title_text">
+                <div class="text">TRINKETRY</div>
+                <div class="subtext">МАЛЕНЬКИЕ РАДОСТИ ДЛЯ ВАШЕГО ДОМА</div>
+            </div>
+        </div>
+        </a>
+        <div class="navbar">
+            <div class="item">
+                <a href="{% url 'shop' %}">МАГАЗИН</a>
+            </div>
+            <div class="item">
+                <a href="{% url 'about' %}">ОБО МНЕ</a>
+            </div>
+            <div class="item">
+                <a href="{% url 'faq' %}">ЧАВО</a>
+            </div>
+            <div class="item">
+                <a href="{% url 'blog' %}">БЛОГ</a>
+            </div>
+            <div class="item">
+                <a href="{% url 'gallery' %}">ГАЛЕРЕЯ</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
