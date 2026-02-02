@@ -3,19 +3,19 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Главная страница")
+    return render(request, 'main/index.html')
 
 def shop(request):
-    return HttpResponse("Страница магазина")
+    return render(request, 'main/shop.html')
 
 def about(request):
-    return HttpResponse("Страница обо мне")
+    return render(request, 'main/about.html')
 
 def faq(request):
-    return HttpResponse("Страница с ЧАВО")
+    return render(request, 'main/faq.html')
 
 def blog(request):
-    return HttpResponse("Страница с блогом")
+    return render(request, 'main/blog.html')
 
 def gallery(request):
-    return HttpResponse("Галерея работ")
+    return render(request, 'main/gallery.html')
