@@ -1,7 +1,16 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 
 {% block title %}МАГАЗИН — {% endblock %}
 
 {% block body %}
-    <p>Магазин</p>
+    {% for product in products_list %}
+    <div class="product_item">
+        <a href="{% url 'shop:product' product.id %}" class="item">
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="item_image">
+        </a>
+        <p>{{product.name}}</p>
+        <p>{{product.cost}}</p>
+    </div>
+    {% endfor %}
 {% endblock %}

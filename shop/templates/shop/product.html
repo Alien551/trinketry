@@ -1,8 +1,6 @@
 {% extends 'main/layout.html' %}
-{% if product_id %}
-    {% block title %}{{product_id}} — {% endblock %}
+{% block title %}{{product.id}} — {% endblock %}
 
-    {% block body %}
-        <p>Карточка товара id: {{product_id}}</p>
-    {% endblock %}
-{% endif %}
+{% block body %}
+    <p>Карточка товара id: {{product.id}}</p>
+{% endblock %}
