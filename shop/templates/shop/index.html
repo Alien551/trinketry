@@ -4,13 +4,17 @@
 {% block title %}МАГАЗИН — {% endblock %}
 
 {% block body %}
-    {% for product in products_list %}
-    <div class="product_item">
-        <a href="{% url 'shop:product' product.id %}" class="item">
-            <img src="{{product.image.url}}" alt="{{product.name}}" class="item_image">
-        </a>
-        <p>{{product.name}}</p>
-        <p>{{product.cost}}</p>
+    <div class="shop_body">
+        {% for product in products_list %}
+        <div class="product_card">
+            <a href="{% url 'shop:product' product.id %}" class="item">
+                <div class="product_image">
+                    <img src="{{product.image.url}}" alt="{{product.name}}">
+                </div>
+            </a>
+            <p>{{product.name}}</p>
+            <p>{{product.cost}}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}
