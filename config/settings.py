@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main',
+    'account.apps.AccountConfig',
+    'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'blog.apps.BlogConfig',
     'gallery.apps.GalleryConfig',
