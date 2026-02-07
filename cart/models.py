@@ -4,5 +4,7 @@ from shop.models import Product
 
 # Create your models here.
 class UserCart(models.Model):
+    objects = models.Manager()
+    
     userid = models.ForeignKey(User, on_delete=models.CASCADE)
     productid = models.ForeignKey(Product, on_delete=models.CASCADE)
