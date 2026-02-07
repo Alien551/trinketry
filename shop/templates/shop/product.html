@@ -1,6 +1,17 @@
-{% extends 'main/layout.html' %}
+{% extends 'layout.html' %}
 {% block title %}{{product.id}} — {% endblock %}
 
 {% block body %}
+    <p>{{cart}}</p>
     <p>Карточка товара id: {{product.id}}</p>
+    <div class="product-detail-wrapper flex">
+        <div class="product-image detail-image">
+            <img src="{{ product.image.url }}" alt="">
+        </div>
+        <div class="product-detail flex column">
+            <div class="product-name text title">{{ product.name }}</div>
+        <div class="product-cost text">{{ product.cost }}</div>
+        <a href="" class="add-to-cart btn">Добавить в корзину</a>
+        </div>
+    </div>
 {% endblock %}

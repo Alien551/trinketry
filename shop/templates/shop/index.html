@@ -1,4 +1,4 @@
-{% extends 'main/layout.html' %}
+{% extends 'layout.html' %}
 {% load static %}
 
 {% block title %}МАГАЗИН — {% endblock %}
@@ -11,9 +11,9 @@
                 <div class="product_image">
                     <img src="{{product.image.url}}" alt="{{product.name}}">
                 </div>
-                <p>{{product.name}}</p>
-                <p>{{product.cost}}</p>
             </a>
+            <p>{{product.name}}</p>
+            <p>{{product.cost}}</p>
             <button>
                 <div class="btn">
                     Добавить в корзину
