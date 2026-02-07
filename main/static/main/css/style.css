@@ -1,51 +1,60 @@
+/**/
+.align-center{
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+}
+.column{
+    flex-direction: column;
+}
+
+.width-fit{width: fit-content;}
+.height-fit{height: fit-content;}
+/**/
+.link-button{
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo{height: 120px;}
+img {
+    height: 100%;
+    object-fit: scale-down;
+}
+header .text{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family: cursive;
+    color: aliceblue;
+}
+.title{font-size: 60px;}
+.subtitle{font-size: 20px;}
+
 body{
     background-color: aliceblue;
     margin: 0;
 }
+
 header {
     height: fit-content;
     background-color: #232c39;
     font-family: cursive;
     color: aliceblue;
-    padding-top: 2.1vw;
-    padding-bottom: 2.1vw;
-    padding-left: 8vw;
-    padding-right: 8vw;
-}
-header .title{
-    height: 120px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-
-}
-header .image{
-    height: 100%;
-    width: auto;
-    display: flex;
-    align-self: center;
-}
-header img{
-    height: 100%;
-    object-fit: contain;
-    padding-right: 30px;
+    padding: 2.1vw 8vw;
 }
 
-header .title_text{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 15px;
-}
-
-header .text{
-    align-content: center;
-    font-size: 60px;
-}
-header .subtext{
+.header-navbar-wrapper{
+    padding: 5vw 8vw 2vw 8vw;
     font-size: 20px;
+    column-gap: 3vw;
+    margin: 0 0 0 0;
 }
-
 header .navbar{
     display: flex;
     justify-content: center;
@@ -55,10 +64,6 @@ header .navbar .item{
     font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
-}
-header a{
-    color: inherit;
-    text-decoration: none;
 }
 
 .shop_body{
