@@ -1,23 +1,20 @@
 {% extends 'layout.html' %}
-{% load static %}
-
-{% block title %}МАГАЗИН — {% endblock %}
+{% load shop_tags %}
 
 {% block body %}
     <div class="shop_body">
+        {% get_all_products_list as products_list %}
         {% for product in products_list %}
         <div class="product_card">
-            <a href="{% url 'shop:product' product.id %}" class="item">
+            <a href="{{ product.get_absolute_url }}" class="item">
                 <div class="product_image">
                     <img src="{{product.image.url}}" alt="{{product.name}}">
                 </div>
             </a>
             <p>{{product.name}}</p>
             <p>{{product.cost}}</p>
-            <button>
-                <div class="btn">
+            <button class="btn product-btn">
                     Добавить в корзину
-                </div>
             </button>
         </div>
         {% endfor %}
