@@ -2,10 +2,13 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html')
+    context={}
+    return render(request, 'main/index.html', context)
 
 def about(request):
-    return render(request, 'main/about.html')
+    context={"title":"Обо мне"}
+    return render(request, 'main/about.html', context)
 
 def faq(request):
-    return render(request, 'main/faq.html')
+    context={"title":"Чаво"}
+    return render(request, 'main/faq.html', context)
