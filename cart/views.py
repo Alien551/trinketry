@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from .utils import cartData
 
 # Create your views here.
 def index(request):
-    context = {"title":"Корзина"}
-    return render(request, 'cart/index.html')
+    data = cartData(request)
+    order = data["order"]
+    order_products = data["order_products"]
 
+    context = {"title":"Корзина", "order":order, "order_products":order_products}
+    return render(request, 'cart/index.html', context)
 
-def add_to_cart(request):
+def update_product(request):
     pass
