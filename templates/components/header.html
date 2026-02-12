@@ -1,10 +1,11 @@
 {% load static %}
 <header>
     <div class="header-wrapper align-center flex">
-        <a class="link-button" href="{% url 'home' %}">
+        <a class="link-button" href="{% url 'main:index' %}">
             <div class="logo-title-wrapper align-center flex">
                 <div class="image-wrapper align-center logo width-fit">
-                    <img class="logo-image" src="{% static 'img/alpaca.svg' %}" alt="Здесь альпака">
+                    <img class="logo-image" src="{% static 'img/alpaca.svg' %}" 
+                         alt="Логотип компании, белая альпака с тёмно-голубой накидкой.">
                 </div>
                 <div class="text-wrapper align-center column width-fit">
                     <p class="text title upper">TRINKETRY</p>
@@ -14,11 +15,11 @@
         </a>
         <div class="user-activities-wrapper align-center flex">
             {% if user.is_authenticated %}
-                <a href="{% url 'account' %}" class="account link-button">{{user.username}}</a>
+                <a href="{% url 'account:index' %}" class="account link-button">{{user.username}}</a>
             {% else %}
-                <a href="{% url 'login' %}" class="login link-button">ВОЙТИ</a>
+                <a href="{% url 'account:login' %}" class="login link-button">ВОЙТИ</a>
             {% endif %}
-            <a href="{% url 'cart' %}" class="cart link-button">
+            <a href="{% url 'cart:index' %}" class="cart link-button">
                 <div class="image-wrapper">
                     <img src="{% static 'img/favicon.png' %}" alt="КОРЗИНА" class="cart-image">
                 </div>
@@ -27,9 +28,9 @@
     </div>
     <div class="header-navbar-wrapper align-center flex">
         <a class='link-button' href="{% url 'shop:index' %}">МАГАЗИН</a>
-        <a class='link-button' href="{% url 'about' %}">ОБО МНЕ</a>
-        <a class='link-button' href="{% url 'faq' %}">ЧАВО</a>
-        <a class='link-button' href="{% url 'blog' %}">БЛОГ</a>
-        <a class='link-button' href="{% url 'gallery' %}">ГАЛЕРЕЯ</a>
+        <a class='link-button' href="{% url 'main:about' %}">ОБО МНЕ</a>
+        <a class='link-button' href="{% url 'main:faq' %}">ЧАВО</a>
+        <a class='link-button' href="{% url 'blog:index' %}">БЛОГ</a>
+        <a class='link-button' href="{% url 'gallery:index' %}">ГАЛЕРЕЯ</a>
     </div>
 </header>
