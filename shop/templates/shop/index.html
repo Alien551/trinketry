@@ -3,19 +3,20 @@
 
 {% block body %}
     <div class="shop_body">
-        {% get_all_products_list as products_list %}
+        {% get_products as products_list %}
         {% for product in products_list %}
         <div class="product_card">
             <a href="{{ product.get_absolute_url }}" class="item">
                 <div class="product_image">
-                    <img src="{{product.image.url}}" alt="{{product.name}}">
+                    <img src="{{ product.image.url }}" alt="{{product.name}}">
                 </div>
             </a>
             <p>{{product.name}}</p>
-            <p>{{product.cost}}</p>
-            <button class="btn product-btn">
-                    Добавить в корзину
-            </button>
+            <p>{{product.price}}</p>
+            <div class="button_wrapper">
+                <a href="{% url 'cart:add' product.id %}" class="btn">Добавить в корзину!!</a>
+            </div>
+            <button data-action="add-to-cart" class="btn product-btn">Добавить в корзину</button>
         </div>
         {% endfor %}
     </div>
