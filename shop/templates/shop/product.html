@@ -11,7 +11,10 @@
         <div class="product-detail flex column">
             <div class="product-name text title">{{ product.name }}</div>
         <div class="product-price text">{{ product.price }}</div>
-        <button data-product={{product.id}} data-action="add-to-cart" class="btn product-btn update-product">Добавить в корзину</button>
+        <div class="button_wrapper">
+            <a href="{% url 'cart:add' product.slug %}" class="btn">Добавить в корзину</a>
+        </div>
+        {% comment %} <button data-product={{product.id}} data-action="add-to-cart" class="btn product-btn update-product">Добавить в корзину</button> {% endcomment %}
         </div>
     </div>
 {% endblock %}

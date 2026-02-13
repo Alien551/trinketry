@@ -1,12 +1,21 @@
 from .models import Order, OrderProducts
 
-def cartData(request):
+def get_order(request):
     if request.user.is_authenticated:
-        customer = request.user
+        order, _ = Order.objects.get_or_create(
+            user=request.user,
+            is_complete=False)
 
-        order, created = Order.objects.get_or_create(customer=customer, is_complete=False)
-        order_products = OrderProducts.objects.filter(order=order)
     else:
-        order = "заглушка для гостевой корзины"
-        order_products = "заглушка для товаров гостевой корзины"
-    return {"order_products":order_products, "order":order}
+        if not request.session.session_key:
+            request.session.create()
+        order, _ = Order.objects.get_or_create(
+            session_key=request.session.session_key,
+            is_complete=False)
+
+    return order
+
+def get_order_products(request):
+    order = get_order(request)
+    order_products = OrderProducts.objects.filter(order=order)
+    return order_products

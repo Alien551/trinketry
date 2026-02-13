@@ -3,8 +3,8 @@
 
 {% block body %}
     <div class="shop_body">
-        {% get_products as products_list %}
-        {% for product in products_list %}
+        {% get_products as products %}
+        {% for product in products %}
         <div class="product_card">
             <a href="{{ product.get_absolute_url }}" class="item">
                 <div class="product_image">
@@ -14,9 +14,9 @@
             <p>{{product.name}}</p>
             <p>{{product.price}}</p>
             <div class="button_wrapper">
-                <a href="{% url 'cart:add' product.id %}" class="btn">Добавить в корзину!!</a>
+                <a href="{% url 'cart:add' product.slug %}" class="btn">Добавить в корзину</a>
             </div>
-            <button data-action="add-to-cart" class="btn product-btn">Добавить в корзину</button>
+            {% comment %} <button data-action="add-to-cart" class="btn product-btn">Добавить в корзину</button> {% endcomment %}
         </div>
         {% endfor %}
     </div>

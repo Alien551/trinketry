@@ -19,13 +19,13 @@ class Product(models.Model):
         verbose_name_plural = "продукты"
         ordering = ("id",)
 
-
     def __str__(self):
         return str(self.name)
 
     def get_absolute_url(self):
         return reverse(viewname="shop:product_detail", kwargs={"product_slug":self.slug})
 
+    @property
     def get_sale_price(self):
         if self.discount:
             discount = self.price * self.discount / 100
