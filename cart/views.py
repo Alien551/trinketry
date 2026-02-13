@@ -31,9 +31,12 @@ def change_product(request, product_id):
 
 def remove_product(request, product_slug):
     product_details = get_product_detail(product_slug)
-    order = get_order(request)
     order_products = get_order_products(request)
-    product = order_products.filter(product=product_details)
-    product.delete()
 
+    #product_slug version
+    product = order_products.filter(product=product_details)
+    # #product_id version
+    # product = order_products.get(id=product_id)
+
+    product.delete()
     return redirect(request.META["HTTP_REFERER"])
