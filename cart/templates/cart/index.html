@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load cart_tags %}
+
+{% block body %}
+    {% order request as order %}
+    {% order_products request as order_products %}
+    {{ order }}
+    {% for product in order_products %}
+        <p>{{ product.product.name }} {{ product.quantity }}</p>
+        <a href="{% url 'cart:remove' product.product.slug %}">
+            <div class="img-wrapper">
+                <img src="" alt="удалить из корзины">
+            </div>
+        </a>
+
+    {% comment %} <div class="cart-item mb-3 p-3 border rounded">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <img src="/path/to/image.jpg" alt="Product Image" width="80" height="80" class="img-thumbnail"/>
+            </div>
+            <div class="col ms-3">
+                <h5 class="mb-1">Название товара</h5>
+                <small>Краткое описание товара</small><br/>
+                <strong>Количество:</strong>  <button type="button" class="btn btn-outline-dark btn-sm px-2 py-0 minus-btn">-</button>  <input type="number" value="1" min="1" max="10" style="width: 50px;" />  <button type="button" class="btn btn-outline-dark btn-sm px-2 py-0 plus-btn">+</button><br/><br/>
+                <strong>Цена:</strong> 1000 ₽   <strong>Итого:</strong> 1000 ₽
+            </div>
+        </div>
+    </div> {% endcomment %}
+    {% endfor %}
+{% endblock %}
