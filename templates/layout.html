@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +13,16 @@
     </title>
     <link rel="icon" type="image/png" sizes="48x48" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--<link rel="stylesheet" href="{% static 'css/Bootstrap\bootstrap.min.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
     {% block css %}{% endblock %}
+
+    <script src='{% static "js/jquery/jquery-4.0.0.min.js" %}'></script>
+    <script src='{% static "js/jquery-ajax.js" %}'></script>
 </head>
 <body>
     {% include 'components/header.html' %}
-    <main>
-        {% block body %}
+    <main class="main-content">
+        {% block content %}
         {% endblock %}
     </main>
     {% include 'components/footer.html' %}
