@@ -10,7 +10,7 @@ def index(request):
 def product_detail(request, product_slug):
     """Страница товара"""
     context = {
-        "title":utils.get_product_detail(product_slug).name,
+        "title":utils.get_product_from_slug(product_slug).name,
         'product_slug':product_slug
         }
     return render(request, 'shop/product.html', context)
