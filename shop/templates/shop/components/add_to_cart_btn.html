@@ -1,0 +1,6 @@
+<div class="button_wrapper btn btn-primary">
+    <a href="{% url 'cart:add' %}" class="add-to-cart link-button" data-product-id="{{ product.id }}">
+        {% csrf_token %}
+        <p class="mb-0">Добавить в корзину</p>
+    </a>
+</div>

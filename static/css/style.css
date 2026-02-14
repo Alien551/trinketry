@@ -1,3 +1,4 @@
+/* Переменные общие для всего документа */
 :root{
     /* Основные цвета проекта */
     --primary-color: #232c39;
@@ -14,14 +15,14 @@
     --company-name-text: 1rem;
 }
 [data-theme='dark']{
-    /* Основные цвета проекта */
+    /* Альтернативные цвета проекта */
     --primary-color: #232c39;
     --secondary-color: #002aff;
     --accent-color: #ffffff;
     --bg-color: #000000;
     --text-primary-color: #ffffff;
     --text-bg-color:#ffffff;
-    /* Основные параметры текста проекта */
+    /* Альтернативные параметры текста проекта */
     font-size: 1rem;
     --h-font-family: cursive;
     --company-name-text: 1rem;
@@ -29,81 +30,66 @@
     --company-name-text: 1rem;
 }
 
+/* Оформление содержимого заголовка страницы */
+/* Информационная плашка с датой обновления каталога товаров */
+.update-wrapper{
+    font-family: var(--h-font-family);
+    background-color: #000000;
+    color:var(--text-primary-color)
+}
+/* Заголовок */
 .header{
     padding: 2.1vw 8vw;
     background-color: var(--primary-color);
     color: var(--text-primary-color);
     font-family: var(--h-font-family);
 }
-.update-wrapper{
-    font-family: var(--h-font-family);
-    background-color: #000000;
-    color:var(--text-primary-color)
-}
-.header-wrapper .page-activities-wrapper .image-wrapper{
+/* Логотип компании */
+.header-wrapper .company-wrapper .image-wrapper{
     height: 120px;
 }
-.header-wrapper .page-activities-wrapper .text-wrapper{
+/* Название компании и её слоган */
+.header-wrapper .company-wrapper .text-wrapper{
     text-align: center;
 }
+/* Кнопки пользователя (войти/аккаунт и корзина) */
 .header-wrapper .user-activities-wrapper .image-wrapper{
     height: 2rem;
     width: 2rem;
 }
+.cart-svg-image path{fill: var(--text-primary-color);}
+/* Кнопки навигации по сайту */
 .navbar-wrapper .link-button{
     margin: .7vw .7vw 0;
 }
-.cart-image path{fill: var(--text-primary-color);}
+/* Общее оформление ссылок (навигация) */
 .link-button{
     color: inherit;
     text-decoration: none;
 }
-
 .link-button:hover{
     color:inherit;
 }
 
+/* ----------------------------------- */
+/* Общее оформление тела документа */
 body{
+    color:var(--text-bg-color);
     background-color: var(--bg-color);
     margin: 0;
 }
-
-.shop_body{
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-left: 8vw;
-    padding-right: 8vw;
+main{
+    padding: 2.1vw 8vw;
+    min-height: 85vh;
 }
-
-.shop_body .product_card{
-    align-content: center;
-    text-align: center;
-    background-color: rgb(202, 209, 215);
-    border-radius: 5%;
-    border: 5px;
+/* ----------------------------------- */
+/* Специфические элементы оформления корзины */
+.cart-product .image-wrapper{
+    width: 100px;
+    height: 100px;
 }
-
-.shop_body .product_image{
-    height: 170px;
-    width: 170px;
-    align-self: center;
+.cart-product .product-detail .image-wrapper{
+    width: 25px;
+    height: 25px;
 }
-
-.shop_body .product_image img{
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-}
-
-.image-wrapper.cart{
-    width: 40px;
-    height: 40px;
-    align-self: center;
-}
-.cart_image{
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    color: aliceblue;
-}
+.bin .svg-image path{fill: var(--text-bg-color);}
